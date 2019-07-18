@@ -1,0 +1,66 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.flip {
+    transform:translate3d(0,0,0);
+    /* 在使用CSS 3D变换的属性时，开启GPU硬件加速，
+    transform:translate3d(0,0,0);
+    使用上面这个代码能提升性能。 */
+	margin:40px;
+}
+.flip-box {
+	position:relative;
+	width:200px;
+	height:140px;
+    overflow:hidden;
+
+}
+.split-line{
+    height: 40px;
+    text-align: left;
+    padding: 2px;
+    line-height: 40px;
+    font-size: 10px;
+    color: goldenrod;
+    border-bottom: 1px dashed goldenrod;
+}
+.item{
+    position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+    height:100%;
+    border: 1px solid #e7e7e7;
+    box-shadow: 1px 1px 1px #dcdcdc;
+    transition:all 1s ease-in-out;
+    /* 出现动画 */
+    transform-style:preserve-3d;
+    /* 子元素将保留其 3D 位置。 */
+    backface-visibility:hidden;
+    /* backface-visibility 属性定义当元素不面向屏幕时是否可见 */
+	box-sizing:border-box;
+}
+.item img{
+    height: 90px;
+    width: 90px;
+    padding-left: 30px;
+    display:block;
+}
+.item-front {
+	transform:rotateY(0deg);
+	z-index:2;
+	background:#fff;
+}
+.item-back {
+	transform:rotateY(180deg);
+	z-index:1;
+}
+.flip-box:hover .item-front{
+    z-index: 1;
+    transform: rotateY(180deg)
+}
+.flip-box:hover .item-back {
+	z-index:2;
+	transform:rotateY(0deg);
+}
