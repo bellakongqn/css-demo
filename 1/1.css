@@ -10,7 +10,8 @@
 	margin:40px;
 }
 .flip-box {
-	position:relative;
+    position:relative;
+    /* 与下面的position:relative 实现旋转的时候出现在原位置,让他们在相同位置重叠 */
 	width:200px;
 	height:140px;
     overflow:hidden;
@@ -50,17 +51,21 @@
 .item-front {
 	transform:rotateY(0deg);
 	z-index:2;
-	background:#fff;
+    background:#fff;
+    /* 见人 */
 }
 .item-back {
-	transform:rotateY(180deg);
+    transform:rotateY(180deg);
+    /* 不见人 */
 	z-index:1;
 }
 .flip-box:hover .item-front{
     z-index: 1;
     transform: rotateY(180deg)
+    /* hover 前面不见人 */
 }
 .flip-box:hover .item-back {
 	z-index:2;
-	transform:rotateY(0deg);
+    transform:rotateY(0deg);
+    /* hover 后面开始见人 */
 }
