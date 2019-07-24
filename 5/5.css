@@ -1,0 +1,42 @@
+/* 定义全局样式 */
+:root {
+    --h1-font-size: 10vmin;
+    --primary-color: rgb(245, 102, 0);
+    --secondary-color: rgb(230, 96, 0);
+    --tiger-image: url(./img/tiger-uppercut.gif);
+    /* 字体背景 */
+    --texture-image: url(https://media.giphy.com/media/wdfxqCQVGHDlC/giphy.gif);
+    /* 字体纹理 */
+}
+
+  
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--primary-color);
+}
+.text-wrapper {
+    position: relative;
+}
+h1{
+    display: flex;
+    flex-direction: row;
+    font-family: 'Titan One', sans-serif;
+    font-size: var(--h1-font-size);
+    background: center/cover var(--secondary-color) var(--tiger-image);
+    -webkit-text-fill-color: transparent;
+    /* 配合background-clip设置文字的填充色的 设为 transparent,将背景图片展示出来*/
+    -webkit-background-clip: text;
+    /* 裁掉文字之外的背景 */
+}
+h1:last-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: var(--texture-image);
+    mix-blend-mode: soft-light;
+    /* 作用时将上层图像以柔光的方式施加到下层 */
+}
