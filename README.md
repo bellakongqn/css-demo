@@ -5,3 +5,4 @@ css special样式练习
 3. Push me btn
 4. radio
 5. text-bg-animation
+6. shine btn
