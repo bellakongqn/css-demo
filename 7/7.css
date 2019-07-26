@@ -1,0 +1,31 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(ellipse at bottom, #1b2735, #090a0f);
+    /* 定义径向渐变 ellipse为椭圆形 圆心在底部 */
+    font-weight: 300;
+}
+
+.all {
+    display: flex;
+    /* 3d z轴垂直于屏幕 perspective 定义指定元素距离观看者的位置<300px 失真，500-2000中等失真，2000以上失真轻微  */
+    -webkit-transform: perspective(300px) rotateX(20deg);
+            transform: perspective(300px) rotateX(20deg);
+    will-change: perspective;
+    /* will-change 为web开发者提供了一种告知浏览器该元素会有哪些变化的方法 */
+    /* -webkit-perspective-origin: center center;
+            perspective-origin: center center; */
+    transition: all 1.3s ease-out;
+    justify-content: center;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+.all:hover {
+    transition: all 1.3s ease-in;
+    -webkit-transform: perspective(10000px) rotateX(0deg);
+            transform: perspective(10000px) rotateX(0deg);
+}
