@@ -7,3 +7,4 @@ css special样式练习
 5. text-bg-animation
 6. shine btn
 7. hover 3d menu display
+8. clip-path
