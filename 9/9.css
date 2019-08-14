@@ -1,0 +1,31 @@
+body{
+    background: #dcdcdc;
+    padding-top: 40px;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+}
+.circle {
+    max-width: 400px;
+    padding: 20px; 
+    background: #ffffff;
+    height: 400px;
+    display: block;
+    position: relative;
+    clip-path: circle(30% at 300px 120px);
+    /* 半径和圆心 */
+}
+.ellipse{
+    max-width: 400px;
+    padding: 20px;
+    display: block; 
+    background: #ffffff;
+    height: 400px; 
+    clip-path: ellipse(15% 10% at 10% 10%);
+    /* x轴半径 Y轴班级 圆心 */
+}
